@@ -1,0 +1,147 @@
+  * {
+  box-sizing: border-box;
+}
+   body{
+    background: hsla(186, 33%, 94%, 1);
+
+background: linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EBF4F5", endColorstr="#B5C6E0", GradientType=1 );
+    border: 5px solid darkgrey;
+    font-family: 'Inter', sans-serif;
+font-family: 'Karla', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+color:#221033;
+   }
+
+   .header{
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 30px;
+
+
+   }
+   
+   
+
+   .input{
+    height: 90vh;
+   }
+    .chartBox{
+      
+      width: 500px;
+      height: 500px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .chartBox2, .chartBox3{
+      
+      max-width: 600px;
+      height: 600px;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      margin-left: 50px;
+      
+    }
+
+
+  .container1{
+    display: flex;
+  }
+  .h{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 25px;
+  }
+
+.side1{
+  padding-top: 200px;
+  padding-right: 100px;
+  margin-left: 50px;
+
+}
+
+.savings{
+  text-align: center;
+}
+
+.input{
+  margin-top: 30px;
+}
+
+hr{
+  margin-left: 50px;
+  margin-right: 50px;
+  height: 5px;
+
+}
+
+.a{
+  background-color:#35de7b ;
+  color: white;
+}
+.main{display: none;}
+
+input[type=text], button, .a{
+  display: flex;
+  width: 30%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+ margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  
+  
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.heading1{
+  text-align: center;
+}
+
+.pdf,.pdf1, .design, .huge-header, .addr2 {
+  display: none;
+}
+.please-wait{
+  display: none;
+  height: 100vh;
+  text-align: center;
+  margin-top: 200px;
+}
+.bottom-buttons{
+  margin-bottom: 25px;
+}
+.huge-header{
+  font-size: 3.5rem;
+  line-height: 1.6;
+}
+
+@media only screen and (max-width: 600px) {
+  .chartBox {
+    width: 90%;
+
+  }
+}

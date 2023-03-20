@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>chart</title>
+  
+	<link rel="stylesheet" type="text/css" href="chart.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Karla:wght@700&family=Poppins:wght@600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyBdZRTNO0ksxchinsCwY21lnUSVeafAMKo"></script> 
+ <script src='https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js'></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js" integrity="sha512-Z8CqofpIcnJN80feS2uccz+pXWgZzeKxDsDNMD/dJ6997/LSRY+W4NmEt9acwR+Gt9OHN0kkI1CTianCwoqcjQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+</head>
+<body>
+  <div class="header">
+    SAVINGS  DASHBOARD
+  </div>
+  <div class="input">
+<input type="text" class="address" placeholder="ADDRESS">
+
+<input type="text" class="bill" placeholder="MONTHLY BILL">
+
+<input type="text" class="kwh" placeholder="COST PER KWH (OPTIONAL)">
+
+<div class="a">
+<input type="radio" name="colors" value="commercial"  checked class='comm'>commercial
+<input type="radio" name="colors" value="residential" class="res">residential
+
+</div>
+
+
+<button onclick="getSavings()">SUBMIT</button>
+<button onclick="reset()">RESET</button>
+</div>
+
+<br/>
+<div class="main">
+
+<div class="savings">
+<h2>Savings for property at:&nbsp;&nbsp;&nbsp;<strong class="addr1"></strong></h2>
+<h2>Savings first month</h2>
+<p class="savings-month"></p>
+<h2>Savings first year</h2>
+<p class="savings-year"></p>
+</div>
+<hr>
+
+  <div class="container1">
+  
+    <div class="side1">
+      <h3>System Size</h3>
+       <p class="system-size"></p>
+     <h3>Annual Production</h3>
+     <p class="annual"></p>
+    </div>
+   
+  <div class="heading">
+  <h1 class='heading1'>Monthly Production</h1> 
+  <div class="chartBox" >
+  <canvas id='chart' width='400' height='400'> 	
+  </canvas>
+  </div>
+</div>
+
+</div>
+<hr>
+<h1 class="h">Grid cost no solar vs. Monthly Cost with Solar with Financing</h1>
+<div class="chartBox2">
+  
+ <canvas id='chart2' width="400" height="400">   
+  </canvas>
+</div>
+<hr>
+<h1 class="h">Cumulative Savings Over 20 Years</h1>
+<div class="chartBox3">
+  
+ <canvas id='chart3' width="400" height="400">   
+  </canvas>
+</div>
+<div class="pdf">
+  <p>Prepared by: Solar Powerhouse <strong class="date"></strong></p>
+  <p class="pre">Preliminary Estimate Prepared For:&nbsp;&nbsp;&nbsp;<strong class="addr"></strong></p>
+  <p>As you may know, solar power systems offer several benefits to businesses like yours:</p>
+  <ul>
+    <li> Energy independence</li>
+    <li>Lowers energy costs </li>
+    <li>Federal and local government incentives to accelerate your ROI</li>
+    <li>Increases property value </li>
+    <li>Increase your ESG score (Environmental, Social,and Governance score)</li>
+  </ul>
+   <h3>About Solar Powerhouse </h3>
+   <p>With years of experience in commercial solar power you can rest assured that you are in good hands. Our deep understanding and appreciation of your business operations, and of your financial considerations, enable us to customize a system and financing that makes sense for you. Solar Powerhouse is ready to manage every step of your solar power system setup and installation including financing, permitting, inspections, installation, and ongoing maintenance. We understand that each step really makes a difference to you, so we put all we've got into assuring quality and accuracy. Every step of the process is tracked in our system and is available for you whenever you need it, so you always know the status of your project.</p> 
+
+<h3>Preliminary Estimate </h3>
+<p>This preliminary estimate is designed to provide you with a glimpse of the many benefits you may receive. A more accurate analysis is necessary to identify your actual savings and the full range of benefits you will be entitled to. 
+After reviewing your preliminary estimate below, please schedule an appointment with one of our solar experts. 
+If you have any questions or concerns feel free to call our offices using the number listed below.</p><p> Kind Regards, 
+</p>
+<p>The Solar Powerhouse Family </p>
+<p>Solar Powerhouse Inc. </p>
+<p>718-866-4366 </p>
+<a href="info@solar-powerhouse.com" style="color: blue;">info@solar-powerhouse.com</a>
+</div>
+<div class="pdf1">
+  <h1>Electric Bill Reduction</h1>
+  <br>
+  <h2>Savings first month</h2>
+  <h2 class="savings-month1" style="color: #ff5900;"></h2>
+  <h2>Savings first year</h2>
+  <h2 class="savings-year1" style="color: #ff5900;"></h2>
+  <br>
+  <br>
+  <br>
+  <br><br><br>
+ <h1>Monthly Production</h1>
+ <h2>System Size</h2>
+ <h2 class="system-size1" style="color: #ff5900;"></h2>
+ <h2>Annual Production</h2>
+ <h2 class="annual1" style="color: #ff5900;"></h2>
+</div>
+<canvas class="design" width='400' height="100" ></canvas>
+<h1 class="huge-header">Solar Powerhouse Preliminary 
+Estimate for <span class="addr2"></span> </h1>
+  
+ 
+<div class="bottom-buttons">
+<button onclick="download()">DOWNLOAD PDF</button>
+<button onclick="reset()">RESET</button>
+</div>
+</div>
+<h1 class="please-wait">Please Wait...</h1>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script> 
+
+<script src="chart4.js">
+</script>
+  
+</body>
+</html>
